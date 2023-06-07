@@ -275,12 +275,12 @@ export default function Home() {
             clearInterval(presaleEndedInterval);
           }
         }
-      }, 3 * 1000);
+      }, 5 * 1000);
 
       // set an interval to get the number of token Ids minted every 5 seconds
       setInterval(async function () {
         await getTokenIdsMinted();
-      }, 3 * 1000);
+      }, 5 * 1000);
     }
   }, [walletConnected]);
 
