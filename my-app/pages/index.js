@@ -57,7 +57,7 @@ export default function Home() {
       // Create a new instance of the Contract with a Signer, which allows
       // update methods
       const nftContract = new Contract(NFT_CONTRACT_ADDRESS, abi, signer);
-      // call the mint from the contract to mint the Crypto Dev
+      // call the mint from the contract to mint the GNIE token
       const tx = await nftContract.mint({
         // value signifies the cost of one crypto dev which is "0.01" eth.
         // We are parsing `0.01` string to ether using the utils library from ethers.js
