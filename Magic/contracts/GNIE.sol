@@ -11,13 +11,13 @@ import "./IConnectlist.sol";
       * token will be the concatenation of the `baseURI` and the `tokenId`.
       */
     string _baseTokenURI;
+
+    /// @dev Set the purchase price for each Fake Token
+    uint256 public _tokenPrice = 0.01 ether;
     
     // _paused is used to pause the contract in case of an emergency
     bool public _paused;
     
-    /// @dev Set the purchase price for each Fake Token
-    uint256 public _tokenPrice = 0.01 ether;
-
     // max number of GNIENFT's
     uint256 public _maxTokenIds = 5 ;
 
@@ -71,8 +71,7 @@ constructor (string memory baseURI , address connectlistContract) ERC721("GNIE",
         _mint(msg.sender, tokenIds);
     }
 
-
-        /**
+   /**
     * @dev _baseURI overrides the Openzeppelin's ERC721 implementation which by default
     * returned an empty string for the baseURI
     */

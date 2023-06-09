@@ -41,7 +41,7 @@ export default function Home() {
       // wait for the transaction to get mined
       await tx.wait();
       setLoading(false);
-      window.alert("You successfully minted a GNIE NFT!");
+      window.alert("You successfully minted a GNIE token!");
     } catch (err) {
       console.error(err);
     }
@@ -57,7 +57,7 @@ export default function Home() {
       // Create a new instance of the Contract with a Signer, which allows
       // update methods
       const nftContract = new Contract(NFT_CONTRACT_ADDRESS, abi, signer);
-      // call the mint from the contract to mint the GNIE token
+      // call the mint from the contract to mint the Crypto Dev
       const tx = await nftContract.mint({
         // value signifies the cost of one crypto dev which is "0.01" eth.
         // We are parsing `0.01` string to ether using the utils library from ethers.js
@@ -67,8 +67,8 @@ export default function Home() {
       // wait for the transaction to get mined
       await tx.wait();
       setLoading(false);
-      window.alert("You successfully minted a GNIE NFT");
-    } catch (err) { 
+      window.alert("You successfully minted a GNIE token!");
+    } catch (err) {
       console.error(err);
     }
   };
@@ -111,7 +111,7 @@ export default function Home() {
   };
 
   /**
-   * checkIfPresaleStarted: checks if the presale has started by querying the `presaleStarted`
+   * checkIfPresaleStarted: checks if the presale has started by quering the `presaleStarted`
    * variable in the contract
    */
   const checkIfPresaleStarted = async () => {
@@ -136,7 +136,7 @@ export default function Home() {
   };
 
   /**
-   * checkIfPresaleEnded: checks if the presale has ended by querying the `presaleEnded`
+   * checkIfPresaleEnded: checks if the presale has ended by quering the `presaleEnded`
    * variable in the contract
    */
   const checkIfPresaleEnded = async () => {
@@ -231,9 +231,9 @@ export default function Home() {
 
     // If user is not connected to the Goerli network, let them know and throw an error
     const { chainId } = await web3Provider.getNetwork();
-    if (chainId !== 11155111) {
-      window.alert("Change the network to Sepolia");
-      throw new Error("Change network to Sepolia");
+    if (chainId !== 5) {
+      window.alert("Change the network to Goerli");
+      throw new Error("Change network to Goerli");
     }
 
     if (needSigner) {
@@ -252,7 +252,7 @@ export default function Home() {
       // Assign the Web3Modal class to the reference object by setting it's `current` value
       // The `current` value is persisted throughout as long as this page is open
       web3ModalRef.current = new Web3Modal({
-        network: "sepolia",
+        network: "goerli",
         providerOptions: {},
         disableInjectedProvider: false,
       });
@@ -288,7 +288,7 @@ export default function Home() {
       renderButton: Returns a button based on the state of the dapp
     */
   const renderButton = () => {
-    // If wallet is not connected, return a button which allows them to connect their wallet
+    // If wallet is not connected, return a button which allows them to connect their wllet
     if (!walletConnected) {
       return (
         <button onClick={connectWallet} className={styles.button}>
@@ -302,7 +302,7 @@ export default function Home() {
       return <button className={styles.button}>Loading...</button>;
     }
 
-    // If connected user is the owner, and presale hasn't started yet, allow them to start the presale
+    // If connected user is the owner, and presale hasnt started yet, allow them to start the presale
     if (isOwner && !presaleStarted) {
       return (
         <button className={styles.button} onClick={startPresale}>
@@ -315,7 +315,7 @@ export default function Home() {
     if (!presaleStarted) {
       return (
         <div>
-          <div className={styles.description}>Presale hasn&#39;t started!</div>
+          <div className={styles.description}>Presale hasnt started!</div>
         </div>
       );
     }
@@ -325,8 +325,8 @@ export default function Home() {
       return (
         <div>
           <div className={styles.description}>
-            Presale has started!!! If your address is whitelisted, Mint a GNIE NFT
-             🥳
+            Presale has started!!! If your address is whitelisted, Mint a GNIE 
+            token 🥳
           </div>
           <button className={styles.button} onClick={presaleMint}>
             Presale Mint 🚀
@@ -335,7 +335,7 @@ export default function Home() {
       );
     }
 
-    // If presale started and has ended, it's time for public minting
+    // If presale started and has ended, its time for public minting
     if (presaleStarted && presaleEnded) {
       return (
         <button className={styles.button} onClick={publicMint}>
@@ -354,9 +354,9 @@ export default function Home() {
       </Head>
       <div className={styles.main}>
         <div>
-          <h1 className={styles.title}>Welcome to Prague summit!</h1>
+          <h1 className={styles.title}>Welcome to Hentei Summit!</h1>
           <div className={styles.description}>
-            It&#39;s an NFT collection for anima FANs' in Crypto.
+            Its an NFT collection for anima FANs in Crypto.
           </div>
           <div className={styles.description}>
             {tokenIdsMinted}/5 have been minted
@@ -369,7 +369,7 @@ export default function Home() {
       </div>
 
       <footer className={styles.footer}>
-       🚀Powered by KaNu
+      🚀Powered 9889 by KaNu &#1F300
       </footer>
     </div>
   );
