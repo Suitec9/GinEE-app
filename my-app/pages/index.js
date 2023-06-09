@@ -232,8 +232,8 @@ export default function Home() {
     // If user is not connected to the Speolia network, let them know and throw an error
     const { chainId } = await web3Provider.getNetwork();
     if (chainId !== 11155111) {
-      window.alert("Change the network to Speolia");
-      throw new Error("Change network to Speolia");
+      window.alert("Change the network to Sepolia");
+      throw new Error("Change network to Sepolia");
     }
 
     if (needSigner) {
@@ -369,7 +369,7 @@ export default function Home() {
       </div>
 
       <footer className={styles.footer}>
-      🚀Powered 9889, by KaNu &#1F300,
+      🚀Powered by KaNu
       </footer>
     </div>
   );
