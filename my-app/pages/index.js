@@ -354,7 +354,7 @@ export default function Home() {
       </Head>
       <div className={styles.main}>
         <div>
-          <h1 className={styles.title}>Welcome to Hentei Summit!</h1>
+          <h1 className={styles.title}>Welcome to ANIAMATION Summit!</h1>
           <div className={styles.description}>
             Its an NFT collection for anima FANs in Crypto.
           </div>

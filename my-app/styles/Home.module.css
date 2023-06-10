@@ -17,9 +17,12 @@
 }
 
 .image {
-  width: 70%;
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  width: 50%;
   height: 50%;
-  margin-left: 60%;
+  background: var(--secondary-glow);
 }
 
 .title {
